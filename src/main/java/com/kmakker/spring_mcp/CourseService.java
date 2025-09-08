@@ -1,7 +1,7 @@
 package com.kmakker.spring_mcp;
 
+import com.kmakker.spring_mcp.domain.Course;
 import jakarta.annotation.PostConstruct;
-import lombok.extern.log4j.Log4j;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.ai.tool.annotation.Tool;
 import org.springframework.stereotype.Service;
