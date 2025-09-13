@@ -2,13 +2,20 @@ spring:
   application:
     name: spring_mcp
   main:
-    web-application-type: servlet
+    web-application-type: reactive
     banner-mode: off
   ai:
     mcp:
       server:
         name: kmakker-mcp-server
         version: 1.0.0
+        resource-change-notification: true
+        tool-change-notification: true
+        prompt-change-notification: true
+        sse-message-endpoint: /mcp/message
+        sse-endpoint: /api/v1/sse
+
+
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres?currentSchema=my_schema
     username: postgres
@@ -23,8 +30,8 @@ spring:
 #      hibernate:
 #        dialect: org.hibernate.dialect.PostgreSQLDialect
 
-#logging:
-#  pattern:
-#    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+logging:
+  pattern:
+    console:
 server:
-    port: 8081
+    port: 8085
